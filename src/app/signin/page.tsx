@@ -110,6 +110,7 @@ export default function Login() {
                     <IonButton expand="block" type="submit" className="mt-6">
                         Log In
                     </IonButton>
+                    {/*
                     <div className="ion-text-center mt-4">
                         <p>
                             Don't have an account?{" "}
@@ -118,6 +119,7 @@ export default function Login() {
                             </Link>
                         </p>
                     </div>
+                    */}
                 </form>
             </IonContent>
         </IonPage>
