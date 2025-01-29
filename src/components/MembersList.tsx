@@ -11,6 +11,9 @@ import {
     IonCardTitle,
     IonCardContent,
 } from "@ionic/react"
+import membersData from "@/data/members.json"
+import { isNativeApp } from "@/lib/utils"
+import NoSSR from "@/components/NoSSR"
 
 type Member = {
     _id: string
@@ -19,58 +22,33 @@ type Member = {
     role: string
 }
 
-// Function to check if we're in an Ionic environment
-const isIonicEnvironment = () => {
-    return typeof (window as any).Ionic !== "undefined"
-}
-
 export default function MembersList() {
     const [members, setMembers] = useState<Member[]>([])
-    const [error, setError] = useState<string | null>(null)
-    const [isIonic, setIsIonic] = useState(false)
 
     useEffect(() => {
-        setIsIonic(isIonicEnvironment())
-
-        const fetchMembers = async () => {
-            try {
-                const response = await fetch("/api/members")
-                const data = await response.json()
-                setMembers(data)
-            } catch (error) {
-                setError("Failed to fetch members")
-            }
-        }
-
-        fetchMembers()
+        setMembers(membersData)
     }, [])
 
-    if (error) {
-        return <div className="text-red-600">{error}</div>
-    }
+    const NativeContent = () => (
+        <IonContent>
+            <div className="p-8">
+                <h2 className="text-4xl font-bold mb-4">CS Club Members</h2>
+                <IonList>
+                    {members.map((member) => (
+                        <IonItem key={member._id}>
+                            <IonLabel>
+                                <h2>{member.name}</h2>
+                                <p>Email: {member.email}</p>
+                                <p>Role: {member.role}</p>
+                            </IonLabel>
+                        </IonItem>
+                    ))}
+                </IonList>
+            </div>
+        </IonContent>
+    )
 
-    if (isIonic) {
-        return (
-            <IonContent>
-                <div className="p-8">
-                    <h2 className="text-4xl font-bold mb-4">CS Club Members</h2>
-                    <IonList>
-                        {members.map((member) => (
-                            <IonItem key={member._id}>
-                                <IonLabel>
-                                    <h2>{member.name}</h2>
-                                    <p>Email: {member.email}</p>
-                                    <p>Role: {member.role}</p>
-                                </IonLabel>
-                            </IonItem>
-                        ))}
-                    </IonList>
-                </div>
-            </IonContent>
-        )
-    }
-
-    return (
+    const WebContent = () => (
         <div className="p-8">
             <h2 className="text-4xl font-bold mb-4">CS Club Members</h2>
             <ul className="space-y-4">
@@ -84,4 +62,6 @@ export default function MembersList() {
             </ul>
         </div>
     )
+
+    return <NoSSR>{isNativeApp() ? <NativeContent /> : <WebContent />}</NoSSR>
 }

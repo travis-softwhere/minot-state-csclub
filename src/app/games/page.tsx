@@ -1,25 +1,14 @@
 "use client"
 
-import {
-    IonContent,
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardTitle,
-} from "@ionic/react"
+import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle } from "@ionic/react"
 import { isNativeApp } from "@/lib/utils"
 import NoSSR from "@/components/NoSSR"
 import GamesList from "@/components/GamesList"
 
 export default function Games() {
     const content = (
-        <div className="max-w-6xl mx-auto px-4">
-            <div className="relative">
-                {/* Curved background */}
+        <div className="w-full mx-auto">
+            <div className="relative p-10">
                 <div
                     className="absolute inset-0 bg-red-600"
                     style={{
@@ -43,6 +32,11 @@ export default function Games() {
         <NoSSR>
             {isNativeApp() ? (
                 <IonPage>
+                    <IonHeader>
+                        <IonToolbar>
+                            <IonTitle>Games</IonTitle>
+                        </IonToolbar>
+                    </IonHeader>
                     <IonContent fullscreen>{content}</IonContent>
                 </IonPage>
             ) : (

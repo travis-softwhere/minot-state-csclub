@@ -152,7 +152,7 @@ export function InstagramFeed({ previewMode = false }: InstagramFeedProps) {
                     <div className="flex flex-col justify-center items-center gap-4">
                         <p>{error}</p>
                         <IonButton
-                            href="https://www.instagram.com/greener_tomorrow_minot/"
+                            href="https://www.instagram.com/msu_csclub/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

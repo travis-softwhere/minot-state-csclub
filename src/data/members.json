@@ -1,0 +1,38 @@
+[
+    {
+        "_id": "1",
+        "name": "Cayden White",
+        "email": "cayden.white@ndus.edu",
+        "role": "President"
+    },
+    {
+        "_id": "2",
+        "name": "Travis Smith",
+        "email": "travis.smith.4@ndus.edu",
+        "role": "Vice President"
+    },
+    {
+        "_id": "3",
+        "name": "Albert Demotte",
+        "email": "albert.demotte@ndus.com",
+        "role": "Secretary"
+    },
+    {
+        "_id": "4",
+        "name": "Saif Khan",
+        "email": "saif.khan@ndus.com",
+        "role": "Treasurer"
+    },
+    {
+        "_id": "5",
+        "name": "Hannah Hicks",
+        "email": "hannah.hicks2@ndus.com",
+        "role": "Member"
+    },
+    {
+        "_id": "6",
+        "name": "Chandler Albertson",
+        "email": "chandler.albertson@ndus.com",
+        "role": "Member"
+    }
+]
