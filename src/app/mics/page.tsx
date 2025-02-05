@@ -1,10 +1,10 @@
 "use client"
 
-import News from "@/components/News"
+import MICS from "@/components/MICS"
 
 
 export default function NewsPage() {
     return (
-        <News />
+        <MICS />
     )
 }

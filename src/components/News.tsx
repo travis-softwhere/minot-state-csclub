@@ -28,15 +28,15 @@ interface NewsItem {
 const dummyNews: NewsItem[] = [
     {
         id: "1",
-        title: "CS Club Meeting",
-        content: "Wednesday 1/29/24 @ 3:00 PM!",
+        title: "Next CS Club Meeting",
+        content: "Wednesday 2/12/24 @ 3:00 PM!",
         date: "2025-01-29",
     },
     {
-        id: "1",
+        id: "2",
         title: "Midwestern Instruction and Computing Symposium",
-        content: "March 2025",
-        date: "2025-01",
+        content: "April 4th and 5th, 2025",
+        date: "04-04-2025 - 04-05-2025",
     },
 ]
 
@@ -77,7 +77,7 @@ export default function News() {
                             <div className="p-6">
                                 <h2 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h2>
                                 <p className="text-gray-600 mb-4">{item.content}</p>
-                                <p className="text-sm text-gray-500">{new Date(item.date).toLocaleDateString()}</p>
+                                <p className="text-sm text-gray-500">{item.date}</p>
                             </div>
                         </div>
                     ))}

@@ -12,11 +12,12 @@ import NoSSR from "@/components/NoSSR"
 
 const routes = [
     { href: "/", label: "Home" },
-    { href: "/news", label: "News" },
     { href: "/tutorials", label: "Tutorials" },
     { href: "/games", label: "Games" },
     { href: "/opportunities", label: "Opportunities" },
     { href: "/members", label: "Members" },
+    { href: "/mics", label: "MICs" },
+    { href: "/clubdocuments", label: "Club Documents" },
 ]
 
 export default function Navbar() {

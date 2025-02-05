@@ -1,11 +1,13 @@
 "use client"
 import Image from "next/image"
 import Hero from "@/components/Hero"
+import News from "@/components/News"
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
       <Hero />
+
       <section className="flex-1 max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="md:flex">
@@ -42,6 +44,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <News />
     </main>
   )
 }
