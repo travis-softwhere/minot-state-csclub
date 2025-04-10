@@ -8,7 +8,8 @@ export default function InstagramSection() {
                 <IonTitle size="large">Follow Our Journey</IonTitle>
             </IonHeader>
             <div className="flex justify-center">
-                <InstagramFeed />
+                {/*<InstagramFeed />*/}
+                Instagram Feed coming soon!
             </div>
         </IonContent>
     )

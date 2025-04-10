@@ -35,28 +35,28 @@ export function InstagramFeed({ previewMode = false }: InstagramFeedProps) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
-    useEffect(() => {
-        let retryCount = 0
-        const maxRetries = 3
+    // useEffect(() => {
+    //     let retryCount = 0
+    //     const maxRetries = 3
 
-        const fetchWithRetry = async () => {
-            try {
-                await fetchPosts()
-            } catch {
-                if (retryCount < maxRetries) {
-                    retryCount++
-                    console.log(`Retrying fetch (${retryCount}/${maxRetries})...`)
+    //     const fetchWithRetry = async () => {
+    //         try {
+    //             await fetchPosts()
+    //         } catch {
+    //             if (retryCount < maxRetries) {
+    //                 retryCount++
+    //                 console.log(`Retrying fetch (${retryCount}/${maxRetries})...`)
 
-                    setTimeout(fetchWithRetry, 1000 * retryCount)
-                } else {
-                    setError("Unable to load Instagram posts.")
-                    setLoading(false)
-                }
-            }
-        }
+    //                 setTimeout(fetchWithRetry, 1000 * retryCount)
+    //             } else {
+    //                 setError("Unable to load Instagram posts.")
+    //                 setLoading(false)
+    //             }
+    //         }
+    //     }
 
-        fetchWithRetry()
-    }, [])
+    //     fetchWithRetry()
+    // }, [])
 
     async function fetchPosts() {
         try {
