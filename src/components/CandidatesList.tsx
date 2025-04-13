@@ -21,7 +21,12 @@ export default function CandidatesList() {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await fetch('/api/candidates');
+        const response = await fetch(`/api/candidates?t=${Date.now()}`, {
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache',
+          },
+        });
         if (!response.ok) {
           throw new Error('Failed to fetch candidates');
         }
